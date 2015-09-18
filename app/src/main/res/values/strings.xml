@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="text_button">TEXT BUTTON</string>
+    <string name="tl_button">A</string>
+    <string name="tr_button">B</string>
+    <string name="bl_button">C</string>
+    <string name="br_button">D</string>
 </resources>

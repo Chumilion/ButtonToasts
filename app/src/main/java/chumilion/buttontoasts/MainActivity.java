@@ -2,25 +2,51 @@ package chumilion.buttontoasts;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
+
+    Integer[] textPresses = {0, 0, 0, 0};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener()
+
+
+        TextView[] textViews = {(TextView) findViewById(R.id.tl_textView),
+                                (TextView) findViewById(R.id.tr_textView),
+                                (TextView) findViewById(R.id.bl_textView),
+                                (TextView) findViewById(R.id.br_textView)};
+
+
+        for(int x = 0; x < textViews.length; x++)
         {
-            public void onClick(View v)
+            final int y = x;
+            final TextView[] textViewz = textViews;
+            textViews[x].setOnClickListener(new View.OnClickListener()
             {
-                Toast.makeText(MainActivity.this, "Button Pressed", Toast.LENGTH_SHORT).show();
-            }
-        });
+
+                public void onClick(View v)
+                {
+                    textPresses[y] = textPresses[y] + 1;
+                    Toast.makeText(MainActivity.this, "Pressed " + textPresses[y] + " times.",
+                            Toast.LENGTH_SHORT).show();
+                    Log.i("onCreate", textViewz[y].getId() + " was pressed " +
+                            textPresses[y] + " times.");
+                }
+            });
+        }
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
