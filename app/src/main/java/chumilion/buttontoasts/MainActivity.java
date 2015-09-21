@@ -38,10 +38,15 @@ public class MainActivity extends AppCompatActivity
                 public void onClick(View v)
                 {
                     textPresses[y] = textPresses[y] + 1;
-                    Toast.makeText(MainActivity.this, "Pressed " + textPresses[y] + " times.",
+                    String timez;
+                    if(textPresses[y] == 1)
+                        timez = " time.";
+                    else
+                        timez = " times.";
+                    Toast.makeText(MainActivity.this, "Pressed " + textPresses[y] + timez,
                             Toast.LENGTH_SHORT).show();
                     Log.i("onCreate", textViewz[y].getId() + " was pressed " +
-                            textPresses[y] + " times.");
+                            textPresses[y] + timez);
                 }
             });
         }
