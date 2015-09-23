@@ -8,4 +8,5 @@
     <string name="tr_button">B</string>
     <string name="bl_button">C</string>
     <string name="br_button">D</string>
+    <string name="reset">RESET</string>
 </resources>

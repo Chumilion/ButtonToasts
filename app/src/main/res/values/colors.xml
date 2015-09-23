@@ -4,5 +4,6 @@
     <color name="bar">#33bbff</color>
     <color name="baz">#77dd99</color>
     <color name="qux">#ffaa55</color>
-    <color name="kar">#888888</color>
+    <color name="key">#000000</color>
+    <color name="whi">#FFFFFF</color>
 </resources>
