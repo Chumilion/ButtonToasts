@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity
                     Log.i("onCreate", textViewz[y].getText() + " was pressed " +
                             textPresses[y] + timez);
                     mySPEditor.putInt("textViews_" + y, textPresses[y]);
+
                     mySPEditor.commit();
                 }
             });
